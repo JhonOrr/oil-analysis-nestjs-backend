@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LubricantsModule } from './lubricants/lubricants.module';
+import { MetricsModule } from './metrics/metrics.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { LubricantsModule } from './lubricants/lubricants.module';
       synchronize: false,
       autoLoadEntities: true
     }),
-    LubricantsModule
+    LubricantsModule,
+    MetricsModule
   ],
   controllers: [AppController],
   providers: [AppService],
